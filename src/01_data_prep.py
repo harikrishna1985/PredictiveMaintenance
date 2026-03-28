@@ -11,7 +11,7 @@ from huggingface_hub import hf_hub_download, HfApi
 # CONFIG
 # =========================
 DATASET_REPO_ID = "harikrishna1985/Engine_data"
-RAW_FILENAME = "raw/engine_data.csv"   # change if needed
+RAW_FILENAME = "data/engine_data.csv"   
 
 TARGET_COLUMN = "engine_condition"
 
