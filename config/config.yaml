@@ -1,7 +1,30 @@
 model:
   repo_id: "harikrishna1985/predictive-maintenance-model"
   filename: "best_model.pkl"
+  info_filename: "best_model_info.json"
+
+data:
+  target_column: "engine_condition"
 
 app:
   title: "Predictive Maintenance Predictor"
-  threshold_note: "Higher predicted risk means higher priority for maintenance review."
+  subtitle: "Predict engine condition from sensor inputs"
+  threshold_note: "Use this output as decision support along with expert maintenance review."
+
+features:
+  input_columns:
+    - engine_rpm
+    - coolant_temperature
+    - oil_pressure
+    - fuel_pressure
+    - intake_temp
+    - battery_voltage
+
+space:
+  repo_id: "harikrishna1985/predictive-maintenance-space"
+
+dataset:
+  repo_id: "harikrishna1985/Engine_data"
+  raw_filename: "raw/engine_data.csv"
+  train_filename: "processed/train.csv"
+  test_filename: "processed/test.csv"
