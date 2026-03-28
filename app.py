@@ -5,9 +5,17 @@ import yaml
 
 
 def load_title():
-    with open("config/config.yaml", "r", encoding="utf-8") as f:
-        config = yaml.safe_load(f)
-    return config["app"]["title"], config["app"]["threshold_note"]
+    try:
+        with open("config.yaml", "r") as f:
+            config = yaml.safe_load(f)
+    except FileNotFoundError:
+        config = None
+
+    if not config or "app" not in config:
+        return "Predictive Maintenance Dashboard", "Default threshold note"
+
+    return config["app"].get("title", "Predictive Maintenance Dashboard"), \
+           config["app"].get("threshold_note", "Default threshold note")
 
 
 title, note = load_title()
