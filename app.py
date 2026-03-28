@@ -56,12 +56,19 @@ if st.button("Predict"):
         result = predict_input(input_df)
 
         st.markdown("### Prediction Result")
-        prediction = result["prediction"]
+        prediction = int(result["prediction"])
 
-        if str(prediction).lower() in ["0", "healthy", "normal"]:
-            st.success(f"Engine Condition: {prediction}")
+        label_map = {
+            0: "Healthy",
+            1: "Needs Maintenance"
+        }
+
+        label = label_map.get(prediction, str(prediction))
+
+        if prediction == 0:
+            st.success(f"Engine Condition: {label}")
         else:
-            st.error(f"Engine Condition: {prediction}")
+            st.error(f"Engine Condition: {label}")
 
         if "probabilities" in result:
             st.markdown("### Prediction Probabilities")
