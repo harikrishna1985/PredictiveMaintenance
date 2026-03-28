@@ -11,6 +11,8 @@ FILES_TO_UPLOAD = [
     "README.md",
     "config/config.yaml",
     "src/predict.py",
+    "src/preprocess.py",
+    "src/utils.py",
 ]
 
 api = HfApi(token=HF_TOKEN)
