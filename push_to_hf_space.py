@@ -9,6 +9,7 @@ FILES_TO_UPLOAD = [
     "requirements.txt",
     "Dockerfile",
     "README.md",
+    "push_to_hf_space.py",
     "config/config.yaml",
     "src/predict.py",
     "src/preprocess.py",
