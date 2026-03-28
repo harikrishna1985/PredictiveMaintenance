@@ -14,6 +14,9 @@ FILES_TO_UPLOAD = [
     "src/predict.py",
     "src/preprocess.py",
     "src/utils.py",
+    "src/01_data_prep.py",
+    "src/02_train.py",
+    "src/03_evaluate.py",
 ]
 
 api = HfApi(token=HF_TOKEN)
