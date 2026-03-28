@@ -2,7 +2,7 @@ from huggingface_hub import HfApi
 import os
 
 HF_TOKEN = os.getenv("HF_TOKEN")
-SPACE_REPO_ID = "your-username/predictive-maintenance-space"
+SPACE_REPO_ID = "harikrishna1985/predictive-maintenance-space"
 
 FILES_TO_UPLOAD = [
     "app.py",
