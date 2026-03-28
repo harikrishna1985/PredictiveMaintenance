@@ -1,1 +1,7 @@
+model:
+  repo_id: "harikrishna1985/predictive-maintenance-model"
+  filename: "best_model.pkl"
 
+app:
+  title: "Predictive Maintenance Predictor"
+  threshold_note: "Higher predicted risk means higher priority for maintenance review."
