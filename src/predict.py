@@ -1,4 +1,5 @@
 from huggingface_hub import hf_hub_download
+from src.preprocess import preprocess_input
 import joblib
 import pandas as pd
 import yaml
@@ -22,14 +23,18 @@ def load_model():
     return model
 
 
-def predict_input(input_df: pd.DataFrame):
+
+def predict_input(input_df):
     model = load_model()
-    prediction = model.predict(input_df)
+
+    processed_df = preprocess_input(input_df)
+
+    prediction = model.predict(processed_df)
 
     result = {"prediction": prediction[0]}
 
     if hasattr(model, "predict_proba"):
-        proba = model.predict_proba(input_df)
+        proba = model.predict_proba(processed_df)
         result["probabilities"] = proba[0].tolist()
 
     return result
