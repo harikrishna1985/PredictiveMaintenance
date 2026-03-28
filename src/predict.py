@@ -44,10 +44,8 @@ def align_features_for_inference(input_df: pd.DataFrame, feature_columns: list[s
 
     df.columns = [col.strip().lower().replace(" ", "_") for col in df.columns]
 
-    # apply one-hot encoding in case categoricals are introduced later
     df = pd.get_dummies(df, drop_first=False)
 
-    # align to exact training feature set
     df = df.reindex(columns=feature_columns, fill_value=0)
 
     return df
@@ -69,7 +67,7 @@ def predict_input(input_df: pd.DataFrame) -> dict:
     }
 
     if hasattr(model, "predict_proba"):
-        proba = model.predict_proba(aligned_df)
-        result["probabilities"] = proba[0].tolist()
+        probabilities = model.predict_proba(aligned_df)
+        result["probabilities"] = probabilities[0].tolist()
 
     return result
