@@ -1,25 +1,92 @@
-# Predictive Maintenance Deployment
+---
+title: Predictive Maintenance App
+emoji: 🚀
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_file: app.py
+pinned: false
+---
 
-## Project Overview
-This project deploys a predictive maintenance model using Streamlit on Hugging Face Spaces.
+# 🚀 Predictive Maintenance System
 
-## Features
-- Loads trained model from Hugging Face Model Hub
-- Accepts sensor inputs from users
-- Converts inputs to a pandas DataFrame
-- Predicts engine condition
-- Automated CI/CD using GitHub Actions
+## 📌 Overview
+This project deploys a **machine learning–based predictive maintenance system** that predicts engine condition using real-time sensor inputs.
 
-## Repository Structure
-[include folder structure]
+The application is built using:
+- **Streamlit** (UI)
+- **Docker** (deployment environment)
+- **Hugging Face Spaces** (hosting)
+- **Hugging Face Model Hub** (model storage)
+- **GitHub Actions** (CI/CD automation)
 
-## Hugging Face Space
-[add your link]
+---
 
-## GitHub Actions
-[add workflow screenshot]
+## 🎯 Objective
+The goal of this project is to:
+- Predict potential engine failures
+- Enable proactive maintenance
+- Reduce downtime and operational costs
 
-## How to Run Locally
-```bash
-pip install -r requirements.txt
-streamlit run app.py
+---
+
+## ⚙️ Features
+
+- ✅ User-friendly Streamlit interface  
+- ✅ Real-time prediction from sensor inputs  
+- ✅ Model loaded dynamically from Hugging Face Model Hub  
+- ✅ Automated deployment via GitHub Actions  
+- ✅ Dockerized environment for consistent execution  
+
+---
+
+## 🧠 Model Details
+
+- **Model Type:** Ensemble (Random Forest / Boosting)
+- **Input Features:**
+  - Engine RPM
+  - Coolant Temperature
+  - Oil Pressure
+  - Fuel Pressure
+  - Intake Temperature
+  - Battery Voltage
+
+- **Target:**
+  - Engine Condition (Healthy / Fault Risk)
+
+---
+
+## 🔄 How It Works
+
+1. User inputs sensor values via the UI  
+2. Inputs are converted into a pandas DataFrame  
+3. Preprocessing pipeline is applied:
+   - Validation  
+   - Missing value handling  
+   - Feature engineering  
+4. Model is loaded from Hugging Face Model Hub  
+5. Prediction is generated and displayed  
+
+---
+
+## 🏗️ Project Structure
+
+```text
+.
+├── app.py
+├── Dockerfile
+├── requirements.txt
+├── README.md
+├── push_to_hf_space.py
+│
+├── config/
+│   └── config.yaml
+│
+├── src/
+│   ├── predict.py
+│   ├── preprocess.py
+│   └── utils.py
+│
+└── .github/
+    └── workflows/
+        └── pipeline.yml
