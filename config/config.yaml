@@ -14,11 +14,11 @@ app:
 features:
   input_columns:
     - engine_rpm
-    - coolant_temperature
-    - oil_pressure
+    - lub_oil_pressure
     - fuel_pressure
-    - intake_temp
-    - battery_voltage
+    - coolant_pressure
+    - lub_oil_temp
+    - coolant_temp
 
 space:
   repo_id: "harikrishna1985/predictive-maintenance-space"
