@@ -25,6 +25,6 @@ space:
 
 dataset:
   repo_id: "harikrishna1985/Engine_data"
-  raw_filename: "raw/engine_data.csv"
+  raw_filename: "data/engine_data.csv"
   train_filename: "processed/train.csv"
   test_filename: "processed/test.csv"
